@@ -1,0 +1,14 @@
+{
+  "name": "echo-referer",
+  "version": "1.0.0",
+  "description": "a little server that responds with a document indicating the referer header",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh Schlesser <josh@cursivelabs.com> (http://cursivelabs.com)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
