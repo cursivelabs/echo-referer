@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
       <head></head>
       <body>
         <p>${req.headers['referer']}</p>
-        <p><a href='http://http://echo-referer.herokuapp.com/click'>LINK</a></p>
+        <p><a href='http://echo-referer.herokuapp.com/click'>LINK</a></p>
       </body>
     </html>`
   )
