@@ -22,7 +22,10 @@ app.get('/click', function (req, res) {
   res.send(
     `<html>
       <head></head>
-      <body>${req.headers['referer']}</body>
+      <body>
+        <p>${req.headers['referer']}</p>
+        <a href="http://echo-referer.herokuapp.com/click/?b" target="_blank">CLICK ME</a>
+      </body>
     </html>`
   )
 })
