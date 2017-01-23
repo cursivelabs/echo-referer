@@ -1,7 +1,8 @@
 var express = require('express')
+var noCache = require('connect-nocache')(
 var app = express()
 
-app.get('/', function (req, res) {
+app.get('/', noCache, function (req, res) {
   res.send(
     `var p = document.createElement('p')
      p.innerText = 'REFERER: ${req.headers['referer']}'
@@ -16,7 +17,7 @@ app.get('/', function (req, res) {
   )
 })
 
-app.get('/click', function (req, res) {
+app.get('/click', noCache, function (req, res) {
   res.send(
     `<html>
       <head></head>
