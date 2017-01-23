@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
      var a = document.createElement('a')
      a.target = '_blank'
      a.href = 'http://echo-referer.herokuapp.com/click'
-     a.text = 'LINK'
+     a.innerHTML = 'LINK'
      document.body.appendChild(a)
     `
   )
