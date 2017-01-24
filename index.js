@@ -34,6 +34,26 @@ app.get('/click', function (req, res) {
   )
 })
 
+app.get('/page', function (req, res) {
+  res.setHeader('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0')
+  res.send(
+    `<html>
+      <head></head>
+      <body>
+        <p>HEADER REFERER ${req.headers['referer']}</p>
+        <p>
+          <script>
+            var p2 = document.createElement('p')
+            p2.innerText = 'JAVASCRIPT REFERER: ' + document.referrer
+            document.body.appendChild(p2)
+          </script>
+        </p>
+        <a href="http://echo-referer.herokuapp.com/click/?b" target="_blank">click this link to see if a header is sent in the request</a>
+      </body>
+    </html>`
+  )
+})
+
 app.listen(process.env.PORT || 9987, function () {
   console.log('Example app listening on port process.env.PORT || 9987!')
 })
