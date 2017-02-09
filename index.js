@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 
      var a = document.createElement('a')
      a.target = '_blank'
-     a.href = 'http://echo-referer.dev/click'
+     a.href = 'http://echo-referer.herokuapp.com/click'
      a.innerHTML = 'click this link to see if a header is sent in the request'
      document.body.appendChild(a)
     `
@@ -33,7 +33,7 @@ app.get('/click', function (req, res) {
       <body>
         <p>FRIENDLY IFRAME HEADER REFERER from link click ${req.headers['referer']}</p>
         <pre>${JSON.stringify(req.headers)}</pre>
-        <a href="http://echo-referer.dev/click/?b" target="_blank">click this link to see if a header is sent in the request</a>
+        <a href="http://echo-referer.herokuapp.com/click/?b" target="_blank">click this link to see if a header is sent in the request</a>
       </body>
     </html>`
   )
@@ -55,7 +55,7 @@ app.get('/page', function (req, res) {
             document.body.appendChild(p2)
           </script>
         </p>
-        <a href="http://echo-referer.dev/click/?b" target="_blank">click this link to see if a header is sent in the request</a>
+        <a href="http://echo-referer.herokuapp.com/click/?b" target="_blank">click this link to see if a header is sent in the request</a>
       </body>
     </html>`
   )
